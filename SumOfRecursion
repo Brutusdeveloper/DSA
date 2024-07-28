@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+// PS : The name of the public class has to be Main for the code to work
+import java.util.*;
+public class SumOfRecursion {
+    public static void recursion(int[] arr){
+        if(arr.length < 2){
+            return;
+        }
+        int[] rowArray = new int [arr.length - 1];
+        for(int i = 0; i < arr.length - 1; i++){
+            rowArray[i] = (arr[i] + arr[i+1]);
+        }
+        System.out.println(Arrays.toString(rowArray));
+        recursion(rowArray);
+    }
+    public static void main(String[] args) {
+        int[] arr ={1, 2, 3, 4, 5};
+        System.out.println(Arrays.toString(arr));
+        recursion(arr);
+    }
+}
